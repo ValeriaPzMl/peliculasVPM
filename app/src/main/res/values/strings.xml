@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">peliculasVPM</string>
+    <string name="emailTxt">E-mail</string>
+    <string name="passTxt">Password</string>
+    <string name="subBtn">Log in</string>
+
+
+</resources>
