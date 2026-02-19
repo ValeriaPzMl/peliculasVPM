@@ -15,6 +15,7 @@ import com.google.firebase.database.database
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ListView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -64,6 +65,7 @@ class Home : AppCompatActivity() {
                                 unit.key.toString())
                             peliculas.add(pelicula)
                 }
+                llenarLista()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -85,5 +87,9 @@ class Home : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
+    private fun llenarLista(){
+        val adaptador = PeliAdapter(this,peliculas)
+        val lista = findViewById<ListView>(R.id.lista)
+        lista.adapter=adaptador
+    }
 }
